@@ -27,19 +27,23 @@ _Bool	readfile(char *filename)
 
 void	printsudoku(unsigned char board[9][9])
 {
+	printf("+-----------------------+\n");
 	for (int y = 0; y < 9; ++y)
 	{
 		if (y == 3 || y == 6)
-			printf("---+---+---\n");
+			printf("|-------+-------+-------|\n| ");
+		else
+			printf("| ");
 		for (int x = 0; x < 9; ++x)
 		{
 			if (x == 3 || x == 6)
-				printf("|");
+				printf("| ");
 			if (!board[y][x])
-				printf(".");
+				printf("  ");
 			else
-				printf("%d", board[y][x]);
+				printf("%d ", board[y][x]);
 		}
-		printf("\n");
+		printf("|\n");
 	}
+	printf("+-----------------------+\n");
 }
