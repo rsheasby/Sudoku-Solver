@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdlib.h>
 #include <include/sudoku.h>
 #include <include/io.h>
 
@@ -23,6 +24,22 @@ _Bool	readfile(char *filename)
 	}
 	close(fd);
 	return (1);
+}
+
+void	savesudoku(unsigned char board[9][9])
+{
+	static _Bool	solved;
+
+	if (solved)
+	{
+		printf("Invalid Sudoku!\nMore than one solution.\n");
+		exit(EXIT_FAILURE);
+	}
+	else
+		solved = 1;
+	for (int y = 0; y < 9; ++y)
+		for (int x = 0; x < 9; ++x)
+			g_globals.result[y][x] = board[y][x];
 }
 
 void	printsudoku(unsigned char board[9][9])
