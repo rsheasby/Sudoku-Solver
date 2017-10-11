@@ -9,6 +9,7 @@ _Bool	readfile(char *filename)
 {
 	int		fd;
 	char	line[10];
+	int		clues = 0;
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
@@ -18,9 +19,17 @@ _Bool	readfile(char *filename)
 		read(fd, &line, 10);
 		for (int x = 0; x < 9; ++x)
 			if (line[x] >= '1' && line[x] <= '9')
+			{
 				g_globals.sudoku[y][x] = line[x] - 48;
+				++clues;
+			}
 			else
 				g_globals.sudoku[y][x] = '\0';
+	}
+	if (clues < 17)
+	{
+		printf("Invalid Sudoku!\nNot enough clues.\n");
+		exit(EXIT_FAILURE);
 	}
 	close(fd);
 	return (1);
