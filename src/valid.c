@@ -29,7 +29,7 @@ static _Bool	valid_block(unsigned char board[9][9], int x, int y, int val)
 	return (1);
 }
 
-static _Bool	valid(unsigned char board[9][9], int x, int y, int val)
+_Bool			valid(unsigned char board[9][9], int x, int y, int val)
 {
 	return (valid_vert(board, x, val)
 		&& valid_horiz(board, y, val)

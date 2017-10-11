@@ -2,8 +2,9 @@
 #include <include/valid.h>
 #include <include/sudoku.h>
 #include <include/io.h>
+#include <stdio.h>
 
-_Bool	backtrack(int x, int y)
+static void	backtrack(int x, int y)
 {
 	char	result[9];
 	char	*temp;
@@ -16,7 +17,10 @@ _Bool	backtrack(int x, int y)
 		x = 0;
 	}
 	if (g_globals.sudoku[y][x])
-		return (backtrack(x + 1, y));
+	{
+		backtrack(x + 1, y);
+		return ;
+	}
 	temp = possibilities(g_globals.sudoku, x, y);
 	for(int i = 0; i < 9; ++i)
 		result[i] = temp[i];
@@ -26,5 +30,10 @@ _Bool	backtrack(int x, int y)
 		backtrack(x + 1, y);
 	}
 	g_globals.sudoku[y][x] = 0;
-	return (0);
+}
+
+void			start_backtracking(void)
+{
+	printf("Solving puzzle using backtracking...\n");
+	backtrack(0, 0);
 }

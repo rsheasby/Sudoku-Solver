@@ -5,7 +5,7 @@
 #include <include/sudoku.h>
 #include <include/io.h>
 
-_Bool	readfile(char *filename)
+void	readfile(char *filename)
 {
 	int		fd;
 	char	line[10];
@@ -13,7 +13,10 @@ _Bool	readfile(char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		return (0);
+	{
+		printf("Cannot open file \"%s\".\n", filename);
+		exit(EXIT_FAILURE);
+	}
 	for (int y = 0; y < 9; ++y)
 	{
 		read(fd, &line, 10);
@@ -32,7 +35,6 @@ _Bool	readfile(char *filename)
 		exit(EXIT_FAILURE);
 	}
 	close(fd);
-	return (1);
 }
 
 void	savesudoku(unsigned char board[9][9])
@@ -53,7 +55,7 @@ void	savesudoku(unsigned char board[9][9])
 
 void	printsudoku(unsigned char board[9][9])
 {
-	printf("+-----------------------+\n");
+	printf("Solved! Solution:\n+-----------------------+\n");
 	for (int y = 0; y < 9; ++y)
 	{
 		if (y == 3 || y == 6)

@@ -1,6 +1,6 @@
 #ifndef BACKTRACK_H
 # define BACKTRACK_H
 
-_Bool	backtrack(int x, int y);
+void	start_backtracking(void);
 
 #endif
