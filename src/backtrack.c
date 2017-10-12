@@ -6,8 +6,8 @@
 
 static void	backtrack(int x, int y)
 {
-	char	result[9];
-	char	*temp;
+	unsigned char	result[9];
+	unsigned char	*temp;
 
 	if (y == 8 && x == 9)
 		savesudoku(g_globals.sudoku);

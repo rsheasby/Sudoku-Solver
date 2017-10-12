@@ -36,9 +36,9 @@ _Bool			valid(unsigned char board[9][9], int x, int y, int val)
 		&& valid_block(board, x, y, val));
 }
 
-char			*possibilities(unsigned char board[9][9], int x, int y)
+unsigned char			*possibilities(unsigned char board[9][9], int x, int y)
 {
-	static char	results[9];
+	static unsigned char	results[9];
 	int			i = 0;
 
 	for (int f = 1; f <= 9; ++f)

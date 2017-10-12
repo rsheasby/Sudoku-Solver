@@ -55,7 +55,7 @@ void	savesudoku(unsigned char board[9][9])
 
 void	printsudoku(unsigned char board[9][9])
 {
-	printf("Solved! Solution:\n+-----------------------+\n");
+	printf("+-----------------------+\n");
 	for (int y = 0; y < 9; ++y)
 	{
 		if (y == 3 || y == 6)
