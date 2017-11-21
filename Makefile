@@ -2,7 +2,7 @@ NAME = sudoku-solver
 
 CC = clang
 
-CFLAGS = -Wall -Wextra -Werror -o $(NAME) -I .
+CFLAGS = -Wall -Wextra -Werror -Ofast -o $(NAME) -I .
 
 CFILES = src/*.c
 
@@ -15,7 +15,7 @@ fclean:
 	rm -f $(NAME)
 
 debug: fclean
-	$(CC) $(CFLAGS) -g $(CFILES)
+	$(CC) $(CFLAGS) -pg $(CFILES)
 
 re: fclean all
 
