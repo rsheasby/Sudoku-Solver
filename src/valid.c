@@ -44,7 +44,6 @@ unsigned char			*possibilities(unsigned char board[9][9], int x, int y)
 	for (int f = 1; f <= 9; ++f)
 		if (valid(board, x, y, f))
 			results[i++] = f;
-	while (i < 9)
-		results[i++] = 0;
+	results[i] = '\0';
 	return (results);
 }

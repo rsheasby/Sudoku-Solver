@@ -24,7 +24,7 @@ static void	backtrack(int x, int y)
 	temp = possibilities(g_globals.sudoku, x, y);
 	for(int i = 0; i < 9; ++i)
 		result[i] = temp[i];
-	for(int i = 0; result[i] && i < 9; ++i)
+	for(int i = 0; result[i]; ++i)
 	{
 		g_globals.sudoku[y][x] = result[i];
 		backtrack(x + 1, y);
