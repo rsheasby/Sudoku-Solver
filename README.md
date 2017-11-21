@@ -3,12 +3,12 @@
 Fast sudoku solver using basic logic in combination with optimized backtracking.
 
 ##	Usage:
-1. Firstly you should build the program. Simply running `make` will build it.
+1. Firstly you should build the program using `make`.
 >Note: The Makefile is written for [Clang](https://clang.llvm.org/). If you wish to use GCC(or something else), then just change the `CC` variable.
 
 2. Next, simply execute sudoku-solver with the input file name as the first(and only) argument. For example: `./sudoku-solver sudoku.txt`.
 
-Alternatively, you can modify the Makefile `run` rule to use your own sudoku file(By default it uses the included `sudoku.txt`). And then simply run `make run`.
+Note: If you simply wish to test the project, you can use `make run` and it will automatically use the included `sudoku.txt`.
 
 ##	Input file format:
 This program uses a input file in plain text. Error checking/correcting is not yet implemented. The input file is 9 lines each representing one row of the sudoku puzzle with `.` representing a blank block.
