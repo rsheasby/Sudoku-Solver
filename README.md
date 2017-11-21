@@ -1,5 +1,7 @@
 #	Sudoku-Solver
 
+Fast sudoku solver using basic logic in combination with optimized backtracking.
+
 ##	Input file format:
 This program uses a input file in plain text. Error checking/correcting is not yet implemented. The input file needs to be of the following format:
 >.........
