@@ -3,17 +3,7 @@
 Fast sudoku solver using basic logic in combination with optimized backtracking.
 
 ##	Input file format:
-This program uses a input file in plain text. Error checking/correcting is not yet implemented. The input file needs to be of the following format:
-> .........
-> .....3.85
-> ..1.2....
-> ...5.7...
-> ..4...1..
-> .9.......
-> 5......73
-> ..2.1....
-> ....4...9
-Where `.` represents a blank block.
+This program uses a input file in plain text. Error checking/correcting is not yet implemented. The input file is 9 lines each representing one row of the sudoku puzzle with `.` representing a blank block.
 
 ##	Usage:
 1. Firstly you should build the program. Simply running `make` will build it.
