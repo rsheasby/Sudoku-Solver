@@ -24,17 +24,18 @@ int	main(int argc, char **argv)
 		}
 		if (check_solved(g_globals.sudoku))
 		{
-			printf("Success!!!\nSolution:\n");
+			printf("Success!!! :-)\nSolution:\n");
 			printsudoku(g_globals.sudoku);
 			return(0);
 		}
 		else if (g_globals.logic_solve)
 		{
-			printf("Partial success...\n");
+			printf("Partial success... :-/\n");
 			printsudoku(g_globals.sudoku);
 		}
 		else
 			printf("No luck :-(\n");
+		printf("Solving puzzle using backtracking...\n");
 		start_backtracking();
 		printf("Solved using backtracking!\nSolution:\n");
 		printsudoku(g_globals.result);

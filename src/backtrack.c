@@ -34,6 +34,5 @@ static void	backtrack(int x, int y)
 
 void			start_backtracking(void)
 {
-	printf("Solving puzzle using backtracking...\n");
 	backtrack(0, 0);
 }
