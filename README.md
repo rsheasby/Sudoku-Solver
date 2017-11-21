@@ -1,6 +1,5 @@
 #	Sudoku-Solver
-
-Fast sudoku solver using basic logic in combination with optimized backtracking.
+Fast sudoku solver using basic logic in combination with optimized backtracking. This has the advantage of being able to solve any valid sudoku puzzle, and do it very quickly. Backtracking becomes exponentially faster with each added clue so the initial basic clue search speeds up most puzzles by an order of magnitude.
 
 ##	Usage:
 1. Firstly you should build the program using `make`.
