@@ -1,0 +1,9 @@
+{
+    "editor.insertSpaces": false,
+    "clang.cflags": [
+        "-I${workspaceRoot}"
+    ],
+    "files.associations": {
+        "*.c": "c"
+    }
+}
