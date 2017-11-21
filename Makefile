@@ -3,8 +3,10 @@ NAME = sudoku-solver
 CC = clang
 
 CFLAGS = -Wall -Wextra -Werror -Ofast -o $(NAME) -I .
+DEBUGFLAGS = -pg
 
-CFILES = src/*.c
+CFILES = src/backtrack.c src/hidden_single.c src/main.c src/valid.c \
+src/check_solved.c src/io.c src/naked_single.c
 
 $(NAME):
 	$(CC) $(CFLAGS) $(CFILES)
@@ -15,7 +17,7 @@ fclean:
 	rm -f $(NAME)
 
 debug: fclean
-	$(CC) $(CFLAGS) -pg $(CFILES)
+	$(CC) $(CFLAGS) $(DEBUGFLAGS) $(CFILES)
 
 re: fclean all
 
