@@ -22,4 +22,4 @@ debug: fclean
 re: fclean all
 
 run: re
-	./sudoku-solver sudoku.txt
+	./$(NAME) sudoku.txt
